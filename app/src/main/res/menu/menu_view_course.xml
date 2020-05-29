@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.jeffquarnbergtrackingapp.ViewCourseActivity">
+    <item
+    android:id="@+id/share_notes"
+    android:orderInCategory="100"
+    android:title="Share Notes"
+    app:showAsAction="never" />
+
+<!--    <item-->
+<!--        android:id="@+id/delete_term"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/delete_term"-->
+<!--        app:showAsAction="never" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/edit_term_add_course"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/add_a_course"-->
+<!--        app:showAsAction="never" />-->
+</menu>
