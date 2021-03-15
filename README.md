@@ -9,12 +9,14 @@ The app provides:
 * The ability to set alerts to notify the student of approaching start or end dates for courses and assessments
 * A sharing feature for optional course notes
 
+
 * A list of terms with details including:
   * Term title
   * Start date
   * End date
   * List of courses associated with each selected term
-    
+
+
 * A list of courses in each term with details including:
   * Course title
   * Start date
@@ -23,7 +25,8 @@ The app provides:
   * Instructor's name, phone number, and email address
   * Add custom notes for each course
   * List of assessments associated with each selected course
-  
+
+
 * A list of assessments in each course with details including:
   * Assessment title
   * Assessment type
