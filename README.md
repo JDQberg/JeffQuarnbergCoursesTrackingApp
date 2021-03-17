@@ -1,4 +1,4 @@
-# JeffQuarnbergWGUTrackingApp
+# StudentProgressApp
 ### An Android Mobile App in Java developed using Android Studio for one of my university courses.
 
 This app is designed to provide a way for a student to track and display their progress through the terms, courses, and assessments of their degree program.
