@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 public class PopulateDb extends AppCompatActivity {
+    // Adds test data to the database.
     private static final String TAG = "PopulateDb";
     Terms term1 = new Terms();
     Terms term2 = new Terms();

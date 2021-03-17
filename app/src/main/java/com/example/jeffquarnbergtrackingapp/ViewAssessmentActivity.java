@@ -39,7 +39,6 @@ public class ViewAssessmentActivity extends AppCompatActivity {
 
     private TextView mTitle;
     private TextView mType;
-    //    private TextView mStartDate;
     private TextView mEndDate;
     private TextView mStatus;
 
@@ -53,7 +52,6 @@ public class ViewAssessmentActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mTitle = findViewById(R.id.view_assessment_title);
         mType = findViewById(R.id.view_assessment_type);
-//        mStartDate = findViewById(R.id.view_assessment_start_date);
         mEndDate = findViewById(R.id.view_assessment_end_date);
         mStatus = findViewById(R.id.view_assessment_status);
         deleteAssessmentButton = findViewById(R.id.delete_assessment_button);
@@ -87,7 +85,6 @@ public class ViewAssessmentActivity extends AppCompatActivity {
 
     private void deleteAssessment() {
         deleteAssessmentRepository.delete(assessment);
-//        mCoursesViewModel.delete(course);
         Intent intent2 = new Intent(this, TermsActivity.class);
         startActivity(intent2);
     }
@@ -103,7 +100,6 @@ public class ViewAssessmentActivity extends AppCompatActivity {
             assessment = getIntent().getParcelableExtra("selected_assessment");
             assessmentId = assessment.getAssessmentId();
 
-            // set remaining variables?
             Log.d(TAG, "getIncomingIntent: " + assessment.toString());
             Log.d(TAG, "onCreate: " + assessment.getAssessmentId() + " " + assessment.getAssessmentTitle() + " from ViewCourseActivity");
 
@@ -118,7 +114,6 @@ public class ViewAssessmentActivity extends AppCompatActivity {
     private void setAssessment() {
         mTitle.setText(assessment.getAssessmentTitle());
         mType.setText(assessment.getAssessmentType());
-//        mStartDate.setText(assessment.getAssessmentStartDate().toString());
         mEndDate.setText(assessment.getAssessmentEndDate().toString());
         mStatus.setText(assessment.getAssessmentStatus());
     }

@@ -38,21 +38,16 @@ public class AddAssessmentActivity extends AppCompatActivity implements View.OnC
     private int courseIdFk;
     private EditText mTitle;
     private EditText mType;
-    //    private EditText mStartDate;
     private EditText mEndDate;
     private String mStatus;
-    //    private Date mAssessmentStartDate;
     private Date mAssessmentEndDate;
-    //    private DatePickerDialog assessmentStartDialog;
     private DatePickerDialog assessmentEndDialog;
     private SimpleDateFormat dateFormat;
     private Button addEndAlertButton;
     private Button homeScreenButton;
     private Button saveButton;
-
     private Assessments mAddAssessment;
     private AssessmentsViewModel mAssessmentsViewModel;
-
     private Courses mInitialCourse;
 
     @Override
@@ -63,8 +58,6 @@ public class AddAssessmentActivity extends AppCompatActivity implements View.OnC
         setSupportActionBar(toolbar);
         mTitle = findViewById(R.id.add_assessment_title);
         mType = findViewById(R.id.add_assessment_type);
-//        mStartDate = findViewById(R.id.add_assessment_start_date);
-//        mStartDate.setInputType(InputType.TYPE_NULL);
         mEndDate = findViewById(R.id.add_assessment_end_date);
         mEndDate.setInputType(InputType.TYPE_NULL);
         dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.US);
@@ -132,7 +125,6 @@ public class AddAssessmentActivity extends AppCompatActivity implements View.OnC
 
     private void saveChanges() {
         try {
-//            mAssessmentStartDate = dateFormat.parse(mStartDate.getText().toString());
             mAssessmentEndDate = dateFormat.parse(mEndDate.getText().toString());
         } catch (ParseException e) {
             e.printStackTrace();
@@ -147,18 +139,8 @@ public class AddAssessmentActivity extends AppCompatActivity implements View.OnC
     }
 
     private void assessmentDatePickers() {
-//        mStartDate.setOnClickListener(this);
         mEndDate.setOnClickListener(this);
         Calendar calendar = Calendar.getInstance();
-
-//        assessmentStartDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//                Calendar newDate = Calendar.getInstance();
-//                newDate.set(year, month, dayOfMonth);
-//                mStartDate.setText(dateFormat.format(newDate.getTime()));
-//            }
-//        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
         assessmentEndDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -173,11 +155,6 @@ public class AddAssessmentActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 assessmentEndDialog.show();
-//                if (hasFocus) {
-//                    assessmentStartDialog.show();
-//                } else {
-//                    assessmentEndDialog.show();
-//                }
             }
         });
     }

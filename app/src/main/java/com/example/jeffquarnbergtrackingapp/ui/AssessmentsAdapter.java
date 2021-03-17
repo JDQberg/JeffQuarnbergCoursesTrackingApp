@@ -40,13 +40,8 @@ public class AssessmentsAdapter extends RecyclerView.Adapter<AssessmentsAdapter.
     @Override
     public void onBindViewHolder(@NonNull AssessmentsHolder holder, int position) {
 
-        //Todo might be in the wrong spot
-        Assessments assessments = mAssessments.get(position); //   might be in the wrong spot
-
-
+        Assessments assessments = mAssessments.get(position);
         holder.textViewAssessmentTitle.setText(assessments.getAssessmentTitle());
-//        holder.textViewAssessmentStart.setText(assessments.getAssessmentStartDate().toString());
-//        holder.textViewAssessmentEnd.setText(assessments.getAssessmentEndDate().toString());
     }
 
     @Override
@@ -69,8 +64,6 @@ public class AssessmentsAdapter extends RecyclerView.Adapter<AssessmentsAdapter.
         public AssessmentsHolder(@NonNull View itemView, OnAssessmentListener onAssessmentListener) {
             super(itemView);
             textViewAssessmentTitle = itemView.findViewById(R.id.text_view_assessment_title);
-//            textViewAssessmentStart = itemView.findViewById(R.id.text_view_start);
-//            textViewAssessmentEnd = itemView.findViewById(R.id.text_view_end);
 
             this.onAssessmentListener = onAssessmentListener;
 

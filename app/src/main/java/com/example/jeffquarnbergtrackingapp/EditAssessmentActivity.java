@@ -37,18 +37,14 @@ public class EditAssessmentActivity extends AppCompatActivity implements View.On
     private int courseIdFk;
     private EditText mTitle;
     private EditText mType;
-    //    private EditText mStartDate;
     private EditText mEndDate;
-    //    private Date mAssessmentStartDate;
     private Date mAssessmentEndDate;
     private String mStatus;
-    //    private DatePickerDialog assessmentStartDialog;
     private DatePickerDialog assessmentEndDialog;
     private SimpleDateFormat dateFormat;
     private Button addEndAlertButton;
     private Button homeScreenButton;
     private Button saveButton;
-
     private Assessments mInitialAssessment;
     private Assessments mEditedAssessment;
     private AssessmentsViewModel mAssessmentsViewModel;
@@ -61,8 +57,6 @@ public class EditAssessmentActivity extends AppCompatActivity implements View.On
         setSupportActionBar(toolbar);
         mTitle = findViewById(R.id.edit_assessment_title);
         mType = findViewById(R.id.edit_assessment_type);
-//        mStartDate = findViewById(R.id.edit_assessment_start_date);
-//        mStartDate.setInputType(InputType.TYPE_NULL);
         mEndDate = findViewById(R.id.edit_assessment_end_date);
         mEndDate.setInputType(InputType.TYPE_NULL);
         dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.US);
@@ -119,18 +113,8 @@ public class EditAssessmentActivity extends AppCompatActivity implements View.On
     }
 
     private void assessmentDatePickers() {
-//        mStartDate.setOnClickListener(this);
         mEndDate.setOnClickListener(this);
         Calendar calendar = Calendar.getInstance();
-
-//        assessmentStartDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//                Calendar newDate = Calendar.getInstance();
-//                newDate.set(year, month, dayOfMonth);
-//                mStartDate.setText(dateFormat.format(newDate.getTime()));
-//            }
-//        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
         assessmentEndDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -145,11 +129,6 @@ public class EditAssessmentActivity extends AppCompatActivity implements View.On
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 assessmentEndDialog.show();
-//                if (hasFocus) {
-//                    assessmentStartDialog.show();
-//                } else {
-//                    assessmentEndDialog.show();
-//                }
             }
         });
     }
@@ -175,7 +154,6 @@ public class EditAssessmentActivity extends AppCompatActivity implements View.On
         mEditedAssessment = mInitialAssessment;
         mEditedAssessment.setAssessmentTitle(mTitle.getText().toString());
         mEditedAssessment.setAssessmentType(mType.getText().toString());
-//        mEditedAssessment.setAssessmentStartDate(mAssessmentStartDate);
         mEditedAssessment.setAssessmentEndDate(mAssessmentEndDate);
         mEditedAssessment.setAssessmentStatus(mStatus);
         mAssessmentsViewModel.update(mEditedAssessment);
@@ -188,7 +166,6 @@ public class EditAssessmentActivity extends AppCompatActivity implements View.On
         mAssessmentId = mInitialAssessment.getAssessmentId();
         mTitle.setText(mInitialAssessment.getAssessmentTitle());
         mType.setText(mInitialAssessment.getAssessmentType());
-//        mEndDate.setText(mInitialAssessment.getAssessmentEndDate().toString());
     }
 
     @Override

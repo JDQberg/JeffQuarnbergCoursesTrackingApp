@@ -57,7 +57,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // set button programmatically
+        // Set button programmatically. (One of the task requirements.)
         Button populateDbButton = new Button(this);
         populateDbButton.setText("Populate The DB With Test Data");
         populateDbButton.setY(170);

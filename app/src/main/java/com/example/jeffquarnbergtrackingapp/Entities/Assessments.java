@@ -32,8 +32,6 @@ public class Assessments implements Parcelable {
     private String assessmentTitle;
     @ColumnInfo(name = Constants.ASSESSMENTS_TABLE_COL_TYPE)
     private String assessmentType;
-    //    @ColumnInfo(name = Constants.ASSESSMENTS_TABLE_COL_START)
-//    private Date assessmentStartDate;
     @ColumnInfo(name = Constants.ASSESSMENTS_TABLE_COL_END)
     private Date assessmentEndDate;
     @ColumnInfo(name = Constants.ASSESSMENTS_TABLE_COL_STATUS)
@@ -45,7 +43,6 @@ public class Assessments implements Parcelable {
                        String assessmentStatus, int courseIdFk) {
         this.assessmentTitle = assessmentTitle;
         this.assessmentType = assessmentType;
-//        this.assessmentStartDate = assessmentStartDate;
         this.assessmentEndDate = assessmentEndDate;
         this.assessmentStatus = assessmentStatus;
         this.courseIdFk = courseIdFk;
@@ -59,7 +56,6 @@ public class Assessments implements Parcelable {
         assessmentId = in.readInt();
         assessmentTitle = in.readString();
         assessmentType = in.readString();
-//        assessmentStartDate = (Date) in.readSerializable();
         assessmentEndDate = (Date) in.readSerializable();
         assessmentStatus = in.readString();
         courseIdFk = in.readInt();
@@ -101,14 +97,6 @@ public class Assessments implements Parcelable {
         this.assessmentType = assessmentType;
     }
 
-//    public Date getAssessmentStartDate() {
-//        return assessmentStartDate;
-//    }
-//
-//    public void setAssessmentStartDate(Date assessmentStartDate) {
-//        this.assessmentStartDate = assessmentStartDate;
-//    }
-
     public Date getAssessmentEndDate() {
         return assessmentEndDate;
     }
@@ -140,7 +128,6 @@ public class Assessments implements Parcelable {
                 "assessmentId=" + assessmentId +
                 ", assessmentTitle='" + assessmentTitle + '\'' +
                 ", assessmentType='" + assessmentType + '\'' +
-//                ", assessmentStartDate=" + assessmentStartDate +
                 ", assessmentEndDate=" + assessmentEndDate +
                 ", assessmentStatus=" + assessmentStatus +
                 ", courseIdFk=" + courseIdFk +
@@ -157,7 +144,6 @@ public class Assessments implements Parcelable {
         parcel.writeInt(assessmentId);
         parcel.writeString(assessmentTitle);
         parcel.writeString(assessmentType);
-//        parcel.writeSerializable(assessmentStartDate);
         parcel.writeSerializable(assessmentEndDate);
         parcel.writeString(assessmentStatus);
         parcel.writeInt(courseIdFk);

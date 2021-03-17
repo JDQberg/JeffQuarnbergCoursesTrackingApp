@@ -57,7 +57,6 @@ public class ViewCourseActivity extends AppCompatActivity implements Assessments
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("View Course Detail");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         mTitle = findViewById(R.id.view_course_title);
         mStartDate = findViewById(R.id.view_course_start_date);

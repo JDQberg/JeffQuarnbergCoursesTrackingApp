@@ -45,12 +45,9 @@ public abstract class ProgressTrackingDatabase extends RoomDatabase {
     private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback() {
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {
+
             super.onOpen(db);
 
-            // uncomment to start with a clean db with test data
-
-            // could make this run with a button add test data on home page
-//            new PopulateDbAsyncTask(instance).execute();
         }
     };
 }
